@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #main_baner {
+    position: relative;
+  }
+  
+  #menu_bar_container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+  }
+  
+  #menu_bar_container.white {
+    background-color: #ffffff;
+  }
+  
+  #menu_bar_container ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  #menu_bar_container ul li {
+    margin-right: 6em; /* Dodaj 2em przestrzeni między przyciskami */
+    position: relative;
+  }
+  
+  #menu_bar_container ul li:first-child {
+    margin-left: 0; /* Anuluj margines dla pierwszego przycisku */
+  }  
+  
+  #menu_bar_container ul li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: "MVB Magnesium", sans-serif;
+    position: relative;
+    z-index: 1;
+    font-weight: bold; /* Dodaj tę linię */
+  }
+  
+  #menu_bar_container.white ul li a {
+    color: #000000;
+  }
+  
+  #menu_bar_container ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+  }
+  
+  #menu_bar_container ul li a:hover::after {
+    transform: scaleY(1);
+  }
+  
+  #welcome_banner {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(to right, white, transparent 70%), url("smiling-young-woman-using-cell-phone-at-subway-station-platform-WPEF02565-transformed.jpeg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+#welcome_banner h1 {
+    background-clip: text;
+    font-size: 48px;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "MVB Magnesium", sans-serif;
+    font-weight: bolder;
+    position: relative;
+    z-index: 1;
+  }
+
+#welcome_banner p {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: "MVB Magnesium", sans-serif;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+#label_banner {
+  width: 50%;
+  text-align: center;
+}
+
+#under_info {
+  display: flex;
+}
+
+.under_info_class {
+  text-align: center;
+  width: 50%;
+}
+
+.under_info_class p{
+  margin: 0;
+}
+
+#examples_container{
+  display: flex;
+  height: 30em;
+  background-color: aliceblue;
+}
+
+.examaples{
+  width: 33.333%;
+}

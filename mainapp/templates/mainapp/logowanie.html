@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'mainapp/style3.css' %}">
+    <title>My Template</title>
+</head>
+<body>
+    <div id="gradient">
+        <div id="menu_bar_container">
+            <ul>
+                <li><a href="{% url 'frontpage' %}" class="button-48"><span class="text">Strona główna</span></a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'plan' %}" class="button-48"><span class="text">Zaplanuj podróż</span></a></li>
+                    <li><a href="{% url 'profile' %}" class="button-48"><span class="text">Profil</span></a></li>
+                {% else %}
+                    <li><a href="{% url 'logowanie' %}" class="button-48"><span class="text">Zaloguj się</span></a></li>
+                {% endif %}
+                <li><a href="{% url 'kontakt' %}" class="button-48"><span class="text">Kontakt</span></a></li>
+            </ul>            
+        </div> 
+        <div id="LOGIN">
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+            <div id="form_logowania", class="kontener">
+                <form method="post", id="login_form">
+                    <h1 id="title_login">Logowanie<br></h1>
+                    {% csrf_token %}
+                    <label for="username">Nazwa użytkownika:<br></label>
+                    <input type="text" id="username" name="username" required><br>
+                    <div id="haslo_top">
+                        <label for="password">Hasło:<br></label>
+                        <input type="password" id="password" name="password" required><br>
+                    </div>
+                    <div id="logowanie_button">
+                        <button type="submit" id="logowanie_button_akt">Zaloguj się!</button>
+                    </div>
+                </form>
+            </div>
+            <div id="Not_registered", class="kontener">
+                <h2 class="textcik" id="textcik_title">Jeśli nie jesteś zarejestrowany, zrób to!</h2>
+                <h3 class="textcik" id="textcik_sub">Zakładanie konta jest banalnie proste!<br>Dzięki zarejestrowaniu się zyskujesz dostęp do możliwości stworzenia swojego planu oraz zapisywaniem go w swojej historii!</h3>
+                <div id="rejestracja_button">
+                    <button id="rejestracja_button_akt" onclick="window.location.href='{{ url_register }}'">Zarejestruj się!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

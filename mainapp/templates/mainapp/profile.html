@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
+    <title>PROFILE</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Już jesteś zalogowany</p>
+    {% else %}
+        <p>Nie jesteś zalogowany</p>
+    {% endif %}
+</body>
+</html>
